@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="leadpanel"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+	<thing-type id="SW">
+		<label>SW Panel</label>
+		<description>LED Panel with dimming function</description>
+		<channels>
+			<channel typeId="power" id="power"></channel>
+			<channel id="brightness" typeId="brightness" />
+		</channels>
+		<config-description>
+			<parameter name="host" type="text" required="true">
+				<label>Host</label>
+				<description>Host address or host name of the LED Panel</description>
+			</parameter>
+			<parameter name="port" type="integer" required="false" min="1024" max="49151">
+				<label>Port</label>
+				<description>Used Port of the device</description>
+				<default>8899</default>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="pollingPeriod" type="integer" required="false">
+				<label>Polling period</label>
+				<description>Polling period for refreshing the data in s</description>
+				<default>30</default>
+				<advanced>true</advanced>
+			</parameter>
+		</config-description>
+	</thing-type>
+	<thing-type id="PDW">
+		<label>PDW Panel</label>
+		<description>LED Panel with dimming and color temperature function</description>
+		<channels>
+			<channel typeId="power" id="power"></channel>
+			<channel typeId="brightness" id="brightness"></channel>
+			<channel typeId="color-temperature" id="color-temperature"></channel>
+		</channels>
+		<config-description>
+			<parameter name="host" type="text" required="true">
+				<label>Host</label>
+				<description>Host address or host name of the LED Panel</description>
+			</parameter>
+			<parameter name="port" type="integer" required="false" min="1024" max="49151">
+				<label>Port</label>
+				<description>Used Port of the device</description>
+				<default>8899</default>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="pollingPeriod" type="integer" required="false">
+				<label>Polling period</label>
+				<description>Polling period for refreshing the data in s</description>
+				<default>30</default>
+				<advanced>true</advanced>
+			</parameter>
+		</config-description>
+	</thing-type>
+	<thing-type id="PDC">
+		<label>PDC Panel</label>
+		<description>LED Panel with dimming and color function</description>
+		<channels>
+			<channel typeId="power" id="power"></channel>
+			<channel typeId="brightness" id="brightness"></channel>
+			<channel typeId="color" id="color"></channel>
+			<channel typeId="white" id="white"></channel>
+		</channels>
+		<config-description>
+			<parameter name="host" type="text" required="true">
+				<label>Host</label>
+				<description>Host address or host name of the LED Panel</description>
+			</parameter>
+			<parameter name="port" type="integer" required="false" min="1024" max="49151">
+				<label>Port</label>
+				<description>Used Port of the device</description>
+				<default>8899</default>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="pollingPeriod" type="integer" required="false">
+				<label>Polling period</label>
+				<description>Polling period for refreshing the data in s</description>
+				<default>30</default>
+				<advanced>true</advanced>
+			</parameter>
+		</config-description>
+	</thing-type>
+
+	<channel-type id="power">
+		<item-type>Switch</item-type>
+		<label>Power</label>
+		<description>Power state</description>
+	</channel-type>
+	<channel-type id="brightness">
+		<item-type>Dimmer</item-type>
+		<label>Brightness</label>
+	</channel-type>
+	<channel-type id="color-temperature">
+		<item-type>Dimmer</item-type>
+		<label>Color temperature</label>
+	</channel-type>
+	<channel-type id="color">
+		<item-type>Color</item-type>
+		<label>Color</label>
+	</channel-type>
+	<channel-type id="white">
+		<item-type>Switch</item-type>
+		<label>White</label>
+	</channel-type>
+
+</thing:thing-descriptions>
