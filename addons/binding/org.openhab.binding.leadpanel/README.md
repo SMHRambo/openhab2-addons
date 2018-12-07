@@ -72,4 +72,4 @@ So if you control the device with the app, the change is not updated in openhab.
 Discovery is possible but not implemented, it interference with the WifiLED Binding because of the same Wifi Controller.
 Also the device must be setup with the LEAD App, to connect it with the wifi.
 Every device has other commands for controlling and there is no way to discover the devicetype.
-The only command they share is the powerstate command. 
+The only command they share is the powerstate command.
